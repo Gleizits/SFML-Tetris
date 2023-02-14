@@ -49,7 +49,7 @@ int main()
 {
     srand(time(0));     
 
-    RenderWindow window(VideoMode(320, 480), "Tetris");
+    RenderWindow window(VideoMode(500, 660), "Tetris");
 
     Texture t1,t2,t3;
     t1.loadFromFile("images/tiles.png");
