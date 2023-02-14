@@ -49,7 +49,7 @@ int main()
 {
     srand(time(0));     
 
-    RenderWindow window(VideoMode(320, 480), "Tetris");
+    RenderWindow window(VideoMode(500, 660), "Tetris");
 
     Texture t1,t2,t3;
     t1.loadFromFile("images/tiles.png");
@@ -79,18 +79,18 @@ int main()
             timer += clock.restart().asSeconds();
 
         Event e;
-        while (window.pollEvent(e))
+         while (window.pollEvent(e))
         {
             if (e.type == Event::Closed)
                 window.close();
 
-            else if (e.type == Event::LostFocus)
+            if (e.type == Event::LostFocus)
                 pause = true;
 
-            else if (e.type == Event::GainedFocus)
+            if (e.type == Event::GainedFocus)
                 pause = false;
 
-            else (e.type == Event::KeyPressed)
+            if (e.type == Event::KeyPressed)
               if (e.key.code == Keyboard::Escape) escapeButtonStatus = !escapeButtonStatus;
               else if (e.key.code==Keyboard::Up) rotate=true;
               else if (e.key.code==Keyboard::Left) dx=-1;
